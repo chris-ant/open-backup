@@ -22,6 +22,7 @@ define( 'OPEN_BACKUP_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 // Include files
 require_once( OPEN_BACKUP_PLUGIN_DIR . 'includes/class-open-backup.php' );
+require_once( OPEN_BACKUP_PLUGIN_DIR . 'admin/class-open-backup-admin.php' );
 
 // Hooks
 register_activation_hook( __FILE__, array( 'Open_Backup', 'plugin_activation' ) );
@@ -29,7 +30,11 @@ register_deactivation_hook( __FILE__, array( 'Open_Backup', 'plugin_deactivation
 
 // Initialize the plugin
 function run_open_backup() {
-	$plugin = new Open_Backup();
-	$plugin->run();
+    $plugin = new Open_Backup();
+    $plugin->run();
+
+    if ( is_admin() ) {
+        $admin = new Open_Backup_Admin();
+    }
 }
 run_open_backup();
