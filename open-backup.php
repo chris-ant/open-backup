@@ -32,9 +32,5 @@ register_deactivation_hook( __FILE__, array( 'Open_Backup', 'plugin_deactivation
 function run_open_backup() {
     $plugin = new Open_Backup();
     $plugin->run();
-
-    if ( is_admin() ) {
-        $admin = new Open_Backup_Admin();
-    }
 }
 run_open_backup();
