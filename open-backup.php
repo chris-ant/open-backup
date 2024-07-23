@@ -4,7 +4,7 @@ Plugin Name: Open Backup
 Plugin URI: http://example.com/open-backup
 Description: A WordPress backup plugin
 Version: 0.1
-Author: Your Name
+Author: Chris Ant
 Author URI: http://example.com
 License: GPL2
 */
