@@ -20,17 +20,19 @@ define( 'OPEN_BACKUP_VERSION', '0.1' );
 define( 'OPEN_BACKUP_MINIMUM_WP_VERSION', '5.0' );
 define( 'OPEN_BACKUP_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
-// Include files
-require_once( OPEN_BACKUP_PLUGIN_DIR . 'includes/class-open-backup.php' );
-require_once( OPEN_BACKUP_PLUGIN_DIR . 'admin/class-open-backup-admin.php' );
+// Load Composer autoloader
+require_once __DIR__ . '/vendor/autoload.php';
+
+// Use namespaces
+use OpenBackup\OpenBackup;
 
 // Hooks
-register_activation_hook( __FILE__, array( 'Open_Backup', 'plugin_activation' ) );
-register_deactivation_hook( __FILE__, array( 'Open_Backup', 'plugin_deactivation' ) );
+register_activation_hook( __FILE__, [OpenBackup::class, 'pluginActivation'] );
+register_deactivation_hook( __FILE__, [OpenBackup::class, 'pluginDeactivation'] );
 
 // Initialize the plugin
-function run_open_backup() {
-    $plugin = new Open_Backup();
+function runOpenBackup() {
+    $plugin = new OpenBackup();
     $plugin->run();
 }
-run_open_backup();
+runOpenBackup();

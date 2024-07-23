@@ -1,0 +1,13 @@
+{
+    "name": "chrisant/open-backup",
+    "description": "A WordPress backup plugin",
+    "type": "wordpress-plugin",
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "OpenBackup\\": "src/"
+        }
+    }
+}

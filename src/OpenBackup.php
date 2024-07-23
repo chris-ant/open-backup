@@ -1,19 +1,21 @@
 <?php
 
-class Open_Backup {
+namespace OpenBackup;
+
+class OpenBackup {
     private $admin;
 
     public function __construct() {
         if (is_admin()) {
-            $this->admin = new Open_Backup_Admin();
+            $this->admin = new Admin\OpenBackupAdmin();
         }
     }
 
-    public static function plugin_activation() {
+    public static function pluginActivation() {
         // Activation code here
     }
 
-    public static function plugin_deactivation() {
+    public static function pluginDeactivation() {
         // Deactivation code here
     }
 
