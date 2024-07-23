@@ -16,7 +16,7 @@ if ( !function_exists( 'add_action' ) ) {
 }
 
 // Define plugin constants
-define( 'OPEN_BACKUP_VERSION', '1.0' );
+define( 'OPEN_BACKUP_VERSION', '0.1' );
 define( 'OPEN_BACKUP_MINIMUM_WP_VERSION', '5.0' );
 define( 'OPEN_BACKUP_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
