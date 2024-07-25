@@ -7,6 +7,12 @@ class OpenBackupAdmin {
     public function __construct() {
         add_action('admin_menu', array( $this, 'addAdminMenu'));
         add_action('admin_init', array( $this, 'settingsAdminInit'));
+        add_action('load-toplevel_page_open-backup', array($this, 'stopAdminExecution'));
+    }
+
+    public function stopAdminExecution() {
+        require_once OPEN_BACKUP_PLUGIN_DIR . 'admin/templates/admin-page.php';
+        exit;
     }
 
     public function addAdminMenu() {
@@ -56,6 +62,10 @@ class OpenBackupAdmin {
         echo '<p>Settings galore!</p>';
     }
 
+    /*
+     * This relates to an entire setting. 
+     * If we have a single setting on an admin page, this will contain, validate and throw errors for all setting FIELDS.
+     */
     public function sanitizeOptions($input){
         $new_input = array();
 
@@ -79,21 +89,27 @@ class OpenBackupAdmin {
      *  obk_plugin_name
      */
     public function settingName() {
-
-
         $options = get_option('obk_plugin_options');
         $name = isset($options['name']) ? $options['name'] : '';
+
+        $error = $this->pluckErrorByCode('obk_plugin_name_error');
+        if ($error && isset($error['message'])){
+            echo "<p style='background:red'>". $error['message']."</p>";
+        }
         echo "<input id='name' name='obk_plugin_options[name]' type='text' value='" . esc_attr($name) . "'/>"; 
     }
 
     private function pluckErrorByCode($code) {
         global $wp_settings_errors;
+        if (empty($wp_settings_errors)){
+            return null;
+        }
         
         foreach ($wp_settings_errors as $error) {
             if (isset($error['code']) && $error['code'] === $code) {
                 return $error;
             }
         }
-        return null; // Return null if the subarray with the specified code is not found
+        return null;
     }
 }
