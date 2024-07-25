@@ -36,3 +36,16 @@ function runOpenBackup() {
     $plugin->run();
 }
 runOpenBackup();
+
+function dd($something){
+    echo '<pre>';
+    var_dump($something);
+    echo '<pre>';
+    die();
+}
+
+function vd($something){
+    echo '<pre>';
+    var_dump($something);
+    echo '<pre>';
+}
