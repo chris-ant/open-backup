@@ -1,5 +1,5 @@
-# open-backup
-Open Backup - A free and open source WordPress plugin for backups and migrations. 
+# Open Backup
+A free and open source WordPress plugin for backups and migrations. 
 
 ## Development Goals
 * Wherever possible, use existing API's from WordPress. 
