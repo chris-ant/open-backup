@@ -8,8 +8,8 @@ use OpenBackup\Admin\Helper;
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="#">
-    <link rel="stylesheet" href="<?php echo rtrim(PBM_PLUGIN_DIR_URL, '/') ?>/public/css/modern-normalize.css">
-    <link rel="stylesheet" href="<?php echo rtrim(PBM_PLUGIN_DIR_URL, '/') ?>/public/css/style.css">
+    <link rel="stylesheet" href="<?php echo rtrim(OPEN_BACKUP_PLUGIN_DIR_URL, '/') ?>/public/css/modern-normalize.css">
+    <link rel="stylesheet" href="<?php echo rtrim(OPEN_BACKUP_PLUGIN_DIR_URL, '/') ?>/public/css/style.css">
     <script src="https://unpkg.com/htmx.org@1.9.9"></script>
     <title><?php echo $title ?></title>
 </head>

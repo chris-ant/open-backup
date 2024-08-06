@@ -19,6 +19,7 @@ if ( !function_exists( 'add_action' ) ) {
 define( 'OPEN_BACKUP_VERSION', '0.1' );
 define( 'OPEN_BACKUP_MINIMUM_WP_VERSION', '6.0' );
 define( 'OPEN_BACKUP_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'OPEN_BACKUP_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );
 
 // Load Composer autoloader
 require_once OPEN_BACKUP_PLUGIN_DIR . '/vendor/autoload.php';
