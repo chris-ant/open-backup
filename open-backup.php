@@ -21,9 +21,11 @@ define( 'OPEN_BACKUP_MINIMUM_WP_VERSION', '6.0' );
 define( 'OPEN_BACKUP_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 // Load Composer autoloader
-require_once __DIR__ . '/vendor/autoload.php';
+require_once OPEN_BACKUP_PLUGIN_DIR . '/vendor/autoload.php';
 
-
+use OpenBackup\Wrapper\AdminMenuPage;
+$app_start_path = OPEN_BACKUP_PLUGIN_DIR . '/src/Admin/start.php';
+$pbm_main_menu_page = new AdminMenuPage($app_start_path, 'Open Backup', 'Open Backup', 'manage_options', 'opb_admin', 'dashicons-backup', 99999999999);
 
 function opb_dd($something){
     echo '<pre>';
