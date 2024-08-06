@@ -3,10 +3,10 @@ Open Backup - A free and open source WordPress plugin for backups and migrations
 
 ## Development Goals
 * Wherever possible, use existing API's from WordPress. 
-    * For settings, use Settings API
+    * For settings, use wp_options
     * For storing backup schedules, use custom post types & post_meta
     * For saving backups remotely, use HTTP API
-    * For cron, use default WordPress cron jobs. 
+    * For cron, use default WordPress cron jobs
 * The UI should be created from scratch.
     * The current WordPress admin experience is very fragmented and prone to issues. 
     * Various notifications, messages appear in the UI from other themes and plugins. 
