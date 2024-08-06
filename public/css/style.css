@@ -1,0 +1,31 @@
+:root{
+    --main-text-color: #1e1e1e;
+    --main-border-color: #e0e0e0;
+    --main-hover-color: #007cba;
+    --main-button-color: #3858E9;
+    --main-button-hover-color: #1D35B4;
+    --main-bg-grey: #f9f9f9;
+    color: var(--main-text-color);
+}
+h1, h2, h3, h4, h5, figure, p, ol, ul {
+    margin: 0 0 1em 0;
+}
+  
+ol, ul {
+    list-style: none;
+    padding-inline: 0;
+}
+
+/* h1, h2, h3, h4, h5 {
+font-size: inherit;
+font-weight: inherit;
+} */
+
+img {
+    display: block;
+    max-inline-size: 100%;
+}
+
+body{
+    background: var(--main-bg-grey);
+}
